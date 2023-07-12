@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Booking App</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Flight Booking App</h1>
+        <h2>User Login</h2>
+        <form action="/user/login" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login">
+        </form>
+
+        <h2>Admin Login</h2>
+        <form action="/admin" method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="adminPassword" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="adminPassword" name="password" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login">
+        </form>
+
+        <h3>Don't have an account? <a href="/user/signup">Sign Up</a></h3>
+    </div>
+</body>
+</html>

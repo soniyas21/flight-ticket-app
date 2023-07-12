@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+
+</head>
+<body>
+    <h1>Welcome to the User Dashboard</h1>
+
+    <h2>Booked Flights</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Flight Name</th>
+                <th>Timing</th>
+                <th>Starting</th>
+                <th>Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if booked_flights %}
+                {% for flight in booked_flights %}
+                    <tr>
+                        <td>{{ flight[0] }}</td>
+                        <td>{{ flight[1] }}</td>
+                        <td>{{ flight[2] }}</td>
+                        <td>{{ flight[3] }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4">No flights booked yet</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <h2>Search Flights</h2>
+    <form action="/user/search_flights" method="POST">
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin" name="origin" required>
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    {% if flights %}
+        <h2>Available Flights</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Name</th>
+                    <th>Timing</th>
+                    <th>Starting</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                    <th>Book Now</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                    <tr>
+                        <td>{{ flight[1] }}</td>
+                        <td>{{ flight[2] }}</td>
+                        <td>{{ flight[3] }}</td>
+                        <td>{{ flight[4] }}</td>
+                        <td>{{ flight[5] }}</td>
+                        <td>
+                            <form action="/user/book_flight/{{ flight[0] }}" method="POST">
+                                <label for="num_tickets">No. of Tickets:</label>
+                                <input type="number" id="num_tickets" name="num_tickets" min="1" max="{{ flight[6] }}" required>
+                                <button type="submit">Book Now</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <a href="/user/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Flight</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+
+</head>
+<body>
+    <h1>Add Flight</h1>
+    <form action="/admin/add_flight" method="POST">
+        <label for="flight_name">Flight Name:</label>
+        <input type="text" id="flight_name" name="flight_name" required><br><br>
+        
+        <label for="timing">Timing:</label>
+        <input type="text" id="timing" name="timing" required><br><br>
+        
+        <label for="starting">Starting:</label>
+        <input type="text" id="starting" name="starting" required><br><br>
+        
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+        
+        <label for="price">Price (in Rupees):</label>
+        <input type="number" id="price" name="price" required><br><br>
+        
+        <input type="submit" value="Add Flight">
+    </form>
+    <br>
+    <a href="/admin/dashboard">Go back to Dashboard</a>
+</body>
+</html>

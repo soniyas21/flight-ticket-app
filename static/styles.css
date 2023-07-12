@@ -1,0 +1,117 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    color: #333; /* Dark text color */
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #fff; /* White header background */
+    padding: 20px;
+    border-bottom: 1px solid #ccc; /* Light gray border */
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #f0f8ff; /* Light blue navigation background */
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+  }
+  
+  /* Content styles */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Button styles */
+  .button {
+    background-color: #87cefa; /* Light blue button background */
+    border: none;
+    color: #fff; /* White button text color */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #6495ed; /* Darker blue on hover */
+  }
+  
+  /* Form styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc; /* Light gray border */
+  }
+  
+  th {
+    background-color: #f0f8ff; /* Light blue header background */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #f0f8ff; /* Light blue footer background */
+    padding: 20px;
+    text-align: center;
+    color: #333; /* Dark text color */
+  }
+  

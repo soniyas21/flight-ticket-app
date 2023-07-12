@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <h3>Welcome, Admin!</h3>
+    <br>
+    <a href="/admin/add_flight" class="button">Add Flight</a>
+    <br><br>
+    <table>
+        <tr>
+            <th>Flight Name</th>
+            <th>Timing</th>
+            <th>Starting</th>
+            <th>Destination</th>
+            <th>Price (INR)</th>
+            <th>Available Seats</th>
+            <th>Action</th>
+        </tr>
+        {% for flight in flights %}
+            <tr>
+                <td>{{ flight[1] }}</td>
+                <td>{{ flight[2] }}</td>
+                <td>{{ flight[3] }}</td>
+                <td>{{ flight[4] }}</td>
+                <td>{{ flight[5] }}</td>
+                <td>{{ flight[6] }}</td>
+                <td>
+                    <form action="/admin/remove_flight/{{ flight[0] }}" method="POST">
+                        <input type="submit" class="button" value="Remove">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/" class="button">Logout</a>
+</body>
+</html>
